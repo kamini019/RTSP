@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center   border-bottom">
+            <h2 class="h2">Camera Overview</h2>
+        </div>
+        <div class="row row_margin">
+            <div class="container">
+                <div class="row">
+
+                    {% for i in camera_count %}
+
+                        <div class="col-6 col-sm-3 col-md-6 box">
+                            <img src="{% url 'rtsp_feed' %}">
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock body %}

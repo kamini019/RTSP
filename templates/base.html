@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="../static/custom.css"/>
+    <title>Video Streaming</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 d-none d-md-block sidebar sidenav">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="active nav-item"><a class="nav-link" href="#"><i class="fa fa-home fa-icon"></i> Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-database fa-icon"></i></i>
+                        Database</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-server fa-icon"></i> Server</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-map fa-icon"></i> Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-calendar-alt fa-icon"></i>
+                        Activity calender</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-info-circle fa-icon"></i> Help
+                        center</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-cog fa-icon"></i> Setting</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9 offset-md-3">
+            <form method="post" action="/" class="form-inline serachbar">
+                {% csrf_token %}
+                <input class="form-control mr-sm-2" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="search" required id="inputSearch" type="search"
+                       placeholder="Search Camera" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <div class="content">
+                <div class="row">
+                    {% block body %} {% endblock body %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/353c5682d3.js"></script>
+
+</body>
+</html>
